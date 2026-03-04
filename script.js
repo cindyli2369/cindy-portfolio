@@ -1,66 +1,118 @@
-let activeModal = null;
-let lastFocusedElement = null;
+// ===== Footer Year =====
+document.getElementById("year").textContent = new Date().getFullYear();
 
-function openModal(id) {
-  const modal = document.getElementById(id);
-  if (!modal) return;
+// ===== Modal Data (edit these texts anytime) =====
+const modalContent = {
+  experience: {
+    title: "Experience",
+    text:
+      "Experience across operations, marketing, and client communication. Strong ability to manage workflows, coordinate teams, and build long-term client relationships.",
+    img: "images/experience.jpg",
+    primaryText: "Hire Me",
+    primaryHref: "#contact",
+  },
+  education: {
+    title: "Education",
+    text:
+      "University of Washington — International Studies (Europe & Southeast Asia) with a Business Administration minor.",
+    img: "images/education.jpg",
+    primaryText: "View Resume",
+    primaryHref: "#",
+  },
+  skills: {
+    title: "Skills",
+    text:
+      "Sales communication • Client relationship building • Marketing strategy • Workflow management • Cross-cultural communication • English/中文 bilingual.",
+    img: "images/skills.jpg",
+    primaryText: "Contact",
+    primaryHref: "#contact",
+  },
+  projects: {
+    title: "Projects",
+    text:
+      "Portfolio website development, marketing projects, and entrepreneurial ventures including a transportation service startup concept and community-focused work.",
+    img: "images/project.jpg",
+    primaryText: "See More",
+    primaryHref: "#about",
+  },
+  volunteer: {
+    title: "Volunteer",
+    text:
+      "Team Read mentor for elementary students • Translation assistance for seniors at Legacy House • Environmental clean-up volunteer.",
+    img: "images/volunteer.jpg",
+    primaryText: "Hire Me",
+    primaryHref: "#contact",
+  },
+  photography: {
+    title: "Photography",
+    text:
+      "Freelance photography capturing everyday life, urban moments, and travel experiences.",
+    img: "images/photography.jpg",
+    primaryText: "Contact",
+    primaryHref: "#contact",
+  },
+};
 
-  lastFocusedElement = document.activeElement;
+// ===== Modal Elements =====
+const modal = document.getElementById("glassModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const modalHeroImg = document.getElementById("modalHeroImg");
+const modalPrimary = document.getElementById("modalPrimary");
 
-  modal.hidden = false;
+let lastFocusedEl = null;
+
+// Open modal with key
+function openModal(key) {
+  const data = modalContent[key];
+  if (!data) return;
+
+  lastFocusedEl = document.activeElement;
+
+  modalTitle.textContent = data.title;
+  modalText.textContent = data.text;
+  modalHeroImg.style.backgroundImage = `url('${data.img}')`;
+
+  modalPrimary.textContent = data.primaryText || "Hire Me";
+  modalPrimary.setAttribute("href", data.primaryHref || "#contact");
+
+  modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
-  activeModal = modal;
 
+  // Prevent background scroll
   document.body.style.overflow = "hidden";
 
-  const closeBtn = modal.querySelector(".close");
-  if (closeBtn) closeBtn.focus();
+  // Focus close button for accessibility
+  const closeBtn = modal.querySelector(".modal-close");
+  closeBtn.focus();
 }
 
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  if (!modal) return;
-
-  modal.hidden = true;
+// Close modal
+function closeModal() {
+  modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
 
   document.body.style.overflow = "";
-  activeModal = null;
 
-  if (lastFocusedElement) lastFocusedElement.focus();
+  if (lastFocusedEl && typeof lastFocusedEl.focus === "function") {
+    lastFocusedEl.focus();
+  }
 }
 
-// Tap/click outside modal-content closes
-document.addEventListener("click", (e) => {
-  const modal = e.target.closest(".modal");
-  if (!modal) return;
-
-  const content = e.target.closest(".modal-content");
-  if (!content) closeModal(modal.id);
+// Click card -> open modal
+document.querySelectorAll(".card[data-modal]").forEach((card) => {
+  card.addEventListener("click", () => openModal(card.dataset.modal));
 });
 
-// ESC closes
+// Close when clicking backdrop or any [data-close]
+modal.addEventListener("click", (e) => {
+  const shouldClose = e.target && e.target.getAttribute("data-close") === "true";
+  if (shouldClose) closeModal();
+});
+
+// ESC to close
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && activeModal) {
-    closeModal(activeModal.id);
-  }
-
-  // Focus trap (Tab stays inside modal)
-  if (e.key === "Tab" && activeModal) {
-    const focusables = activeModal.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-    if (!focusables.length) return;
-
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
+  if (e.key === "Escape" && modal.classList.contains("is-open")) {
+    closeModal();
   }
 });

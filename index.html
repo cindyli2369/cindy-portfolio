@@ -1,270 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cindy J Li | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cindy J Li | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
-<header class="navbar">
-
-<div class="logo">CINDY J LI</div>
-
-<nav>
-<a href="#">About</a>
-<a href="#">Marketing</a>
-<a href="#">Sales</a>
-<a href="#">Photography</a>
-<a href="#">Volunteer</a>
-<a href="#">Hire Me</a>
-</nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-text">
-
-<h1>CINDY J LI</h1>
-
-<h2>Management • Sales • Marketing</h2>
-
-<p>
-Results-driven professional with strong client communication,
-bilingual fluency (English/中文), and proven execution across
-fast-paced environments.
-</p>
-
-<div class="hero-buttons">
-
-<a class="btn">View Resume</a>
-<a class="btn-outline">LinkedIn</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-<img src="profile.jpg">
-</div>
-
-</section>
-
-
-<!-- NAV CARDS -->
-
-<section class="cards-section">
-
-<h2 class="cards-title">Today's Hot Picks for Recruiter</h2>
-
-<div class="card-grid">
-
-<div class="card" onclick="openModal('experience')"
-style="background-image:url('path.jpg')">
-
-<div class="card-text">Experience</div>
-
-</div>
-
-
-<div class="card" onclick="openModal('education')"
-style="background-image:url('education.jpg')">
-
-<div class="card-text">Education</div>
-
-</div>
-
-
-<div class="card" onclick="openModal('skills')"
-style="background-image:url('skills.jpg')">
-
-<div class="card-text">Skills</div>
-
-</div>
-
-
-<div class="card" onclick="openModal('projects')"
-style="background-image:url('project.jpg')">
-
-<div class="card-text">Projects</div>
-
-</div>
-
-
-<div class="card" onclick="openModal('volunteer')"
-style="background-image:url('volunteer.jpg')">
-
-<div class="card-text">Volunteer</div>
-
-</div>
-
-
-<div class="card" onclick="openModal('photo')"
-style="background-image:url('photography.jpg')">
-
-<div class="card-text">Photography</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- MODALS -->
-
-
-<div id="experience" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal('experience')">&times;</span>
-
-<h2>Experience</h2>
-
-<p>
-
-Experience across operations, marketing and client communication.
-
-Strong ability to manage workflows, coordinate teams, and build
-long-term client relationships.
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<div id="education" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal('education')">&times;</span>
-
-<h2>Education</h2>
-
-<p>
-
-University of Washington
-
-International Studies
-
-Business Administration Minor
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<div id="skills" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal('skills')">&times;</span>
-
-<h2>Skills</h2>
-
-<p>
-
-Sales communication • Client relationship building • Marketing strategy
-
-Workflow management • Cross cultural communication
-
-English / Chinese bilingual
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<div id="projects" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal('projects')">&times;</span>
-
-<h2>Projects</h2>
-
-<p>
-
-Portfolio website development, marketing projects,
-and entrepreneurial ventures including transportation service startup.
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<div id="volunteer" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal('volunteer')">&times;</span>
-
-<h2>Volunteer</h2>
-
-<p>
-
-Team Read mentor for elementary students.
-
-Translation assistance for seniors at Legacy House.
-
-Environmental cleanup volunteer.
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<div id="photo" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal('photo')">&times;</span>
-
-<h2>Photography</h2>
-
-<p>
-
-Freelance photography capturing everyday life,
-urban moments, and travel experiences.
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<script src="script.js"></script>
-
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">CINDY J LI</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#marketing">Marketing</a>
+      <a href="#sales">Sales</a>
+      <a href="#management">Management</a>
+      <a href="#volunteerSection">Volunteer</a>
+      <a href="#contact">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>CINDY J LI</h1>
+      <h2>Management • Sales • Marketing</h2>
+
+      <p>
+        Results-driven professional with strong client communication,
+        bilingual fluency (English/中文), and proven execution across
+        fast-paced environments.
+      </p>
+
+      <div class="hero-buttons">
+        <!-- put your real links -->
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        <a class="btn-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="profile.jpg" alt="Cindy Li headshot">
+    </div>
+  </section>
+
+  <!-- NAV CARDS -->
+  <section class="cards-section" id="quicknav">
+    <h2 class="cards-title">Today's Hot Picks for Recruiter</h2>
+
+    <div class="card-grid">
+
+      <div class="card" role="button" tabindex="0"
+           onclick="openModal('experience')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('experience')}"
+           style="background-image:url('path.jpg')">
+        <div class="card-text">Experience</div>
+      </div>
+
+      <div class="card" role="button" tabindex="0"
+           onclick="openModal('education')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('education')}"
+           style="background-image:url('education.jpg')">
+        <div class="card-text">Education</div>
+      </div>
+
+      <div class="card" role="button" tabindex="0"
+           onclick="openModal('skills')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('skills')}"
+           style="background-image:url('skills.jpg')">
+        <div class="card-text">Skills</div>
+      </div>
+
+      <div class="card" role="button" tabindex="0"
+           onclick="openModal('projects')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('projects')}"
+           style="background-image:url('project.jpg')">
+        <div class="card-text">Projects</div>
+      </div>
+
+      <div class="card" role="button" tabindex="0"
+           onclick="openModal('volunteer')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('volunteer')}"
+           style="background-image:url('volunteer.jpg')">
+        <div class="card-text">Volunteer</div>
+      </div>
+
+      <div class="card" role="button" tabindex="0"
+           onclick="openModal('photo')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('photo')}"
+           style="background-image:url('photography.jpg')">
+        <div class="card-text">Photography</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OPTIONAL SECTIONS (for navbar links) -->
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>Coming soon…</p>
+  </section>
+
+  <section id="marketing" class="section dark">
+    <h2>Marketing</h2>
+    <p>Coming soon…</p>
+  </section>
+
+  <section id="sales" class="section">
+    <h2>Sales</h2>
+    <p>Coming soon…</p>
+  </section>
+
+  <section id="management" class="section dark">
+    <h2>Management</h2>
+    <p>Coming soon…</p>
+  </section>
+
+  <section id="volunteerSection" class="section">
+    <h2>Volunteer</h2>
+    <p>Coming soon…</p>
+  </section>
+
+  <section id="contact" class="section dark">
+    <h2>Hire Me</h2>
+    <p>Open to opportunities. Contact coming soon…</p>
+  </section>
+
+  <!-- MODALS (IMPORTANT: add hidden + aria-hidden initially) -->
+
+  <div id="experience" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="experienceTitle">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal('experience')" aria-label="Close">&times;</button>
+      <h2 id="experienceTitle">Experience</h2>
+      <p>
+        Experience across operations, marketing and client communication.
+        Strong ability to manage workflows, coordinate teams, and build
+        long-term client relationships.
+      </p>
+    </div>
+  </div>
+
+  <div id="education" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="educationTitle">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal('education')" aria-label="Close">&times;</button>
+      <h2 id="educationTitle">Education</h2>
+      <p>
+        University of Washington<br/>
+        International Studies<br/>
+        Business Administration Minor
+      </p>
+    </div>
+  </div>
+
+  <div id="skills" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="skillsTitle">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal('skills')" aria-label="Close">&times;</button>
+      <h2 id="skillsTitle">Skills</h2>
+      <p>
+        Sales communication • Client relationship building • Marketing strategy<br/>
+        Workflow management • Cross cultural communication<br/>
+        English / Chinese bilingual
+      </p>
+    </div>
+  </div>
+
+  <div id="projects" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="projectsTitle">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal('projects')" aria-label="Close">&times;</button>
+      <h2 id="projectsTitle">Projects</h2>
+      <p>
+        Portfolio website development, marketing projects,
+        and entrepreneurial ventures including transportation service startup.
+      </p>
+    </div>
+  </div>
+
+  <div id="volunteer" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="volunteerTitle">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal('volunteer')" aria-label="Close">&times;</button>
+      <h2 id="volunteerTitle">Volunteer</h2>
+      <p>
+        Team Read mentor for elementary students.<br/>
+        Translation assistance for seniors at Legacy House.<br/>
+        Environmental cleanup volunteer.
+      </p>
+    </div>
+  </div>
+
+  <div id="photo" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="photoTitle">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal('photo')" aria-label="Close">&times;</button>
+      <h2 id="photoTitle">Photography</h2>
+      <p>
+        Freelance photography capturing everyday life,
+        urban moments, and travel experiences.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

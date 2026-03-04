@@ -107,10 +107,15 @@ section[id] { scroll-margin-top: 86px; }
   min-height: 560px;
   display: flex;
   align-items: center;
-  background:
-    linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.82)),
-    url("images/cafe.jpeg") center/cover no-repeat;
   border-bottom: 1px solid rgba(255,255,255,.06);
+
+  background-image:
+    linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.82)),
+    url("images/cafe.jpeg");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* hero headshot circle */
@@ -158,7 +163,7 @@ section[id] { scroll-margin-top: 86px; }
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.10);
-  background-image: var(--bg);
+  background: var(--bg2);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

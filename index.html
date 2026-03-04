@@ -31,8 +31,13 @@
 
     <ul class="nav-menu" id="navMenu">
       <li><a class="nav-link" href="#home">Home</a></li>
-      <li><a class="nav-link" href="#sections">Portfolio</a></li>
-      <li><a class="nav-link" href="#hire">Hire Me</a></li>
+      <li><a class="nav-link" href="#about">About</a></li>
+      <li><a class="nav-link" href="#marketing">Marketing</a></li>
+      <li><a class="nav-link" href="#sales">Sales</a></li>
+      <li><a class="nav-link" href="#photography">Photography</a></li>
+      <li><a class="nav-link" href="#volunteer">Volunteer</a></li>
+      <li><a class="nav-link" href="#languages">Languages</a></li>
+      <li><a class="nav-link nav-cta" href="#hire">Hire Me</a></li>
     </ul>
   </nav>
 </div>
@@ -71,211 +76,221 @@
 </section>
 
 <!-- ==================== NAVIGATION CARDS SECTION ==================== -->
-<section class="sections-intro" id="sections">
+<section class="sections-intro">
   <div class="container">
     <h2 class="intro-title">Today's Hot Picks for Recruiter</h2>
     
     <div class="card-grid">
-      <!-- ABOUT Card -->
-      <button class="card" data-section="about" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/cafe.jpg'); background-size: cover; background-position: center;">
+      <!-- TOP ROW -->
+      <a href="#marketing" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/experience.jpg'); background-size: cover; background-position: center;">
         <div class="card-overlay"></div>
-        <div class="card-text">About</div>
-      </button>
+        <div class="card-text">Experience</div>
+      </a>
 
-      <!-- MARKETING Card -->
-      <button class="card" data-section="marketing" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/project.jpg'); background-size: cover; background-position: center;">
+      <a href="#sales" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/education.jpg'); background-size: cover; background-position: center;">
         <div class="card-overlay"></div>
-        <div class="card-text">Marketing</div>
-      </button>
+        <div class="card-text">Education</div>
+      </a>
 
-      <!-- SALES Card -->
-      <button class="card" data-section="sales" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/skills.jpg'); background-size: cover; background-position: center;">
+      <a href="#languages" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/skills.jpg'); background-size: cover; background-position: center;">
         <div class="card-overlay"></div>
-        <div class="card-text">Sales</div>
-      </button>
+        <div class="card-text">Skills</div>
+      </a>
 
-      <!-- PHOTOGRAPHY Card -->
-      <button class="card" data-section="photography" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/ocean.jpg'); background-size: cover; background-position: center;">
+      <!-- BOTTOM ROW -->
+      <a href="#about" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/project.jpg'); background-size: cover; background-position: center;">
         <div class="card-overlay"></div>
-        <div class="card-text">Photography</div>
-      </button>
+        <div class="card-text">Projects</div>
+      </a>
 
-      <!-- VOLUNTEER Card -->
-      <button class="card" data-section="volunteer" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/volunteer.jpg'); background-size: cover; background-position: center;">
+      <a href="#volunteer" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/volunteer.jpg'); background-size: cover; background-position: center;">
         <div class="card-overlay"></div>
         <div class="card-text">Volunteer</div>
-      </button>
+      </a>
 
-      <!-- LANGUAGES Card -->
-      <button class="card" data-section="languages" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/education.jpg'); background-size: cover; background-position: center;">
+      <a href="#photography" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/ocean.jpg'); background-size: cover; background-position: center;">
         <div class="card-overlay"></div>
-        <div class="card-text">Languages</div>
-      </button>
+        <div class="card-text">Photography</div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ==================== MODAL CONTENT ==================== -->
-<div class="modal" id="contentModal">
-  <div class="modal-content">
-    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-    <div id="modalBody"></div>
-  </div>
-</div>
-
-<!-- ==================== DETAILED SECTIONS (Hidden, loaded into modal) ==================== -->
-
-<!-- ABOUT SECTION -->
-<section class="section-content" id="about-content">
-  <h2>About</h2>
-  <p class="section-subtitle">I'm a people-first, execution-driven professional focused on Marketing, Sales, and Management roles.</p>
-
-  <div class="split">
-    <div class="panel">
-      <h3>Who I am</h3>
-      <p>I'm Cindy Li — a bilingual (English/中文) communicator with experience working in client-facing and coordination-heavy environments. I'm known for being organized, reliable, and easy to work with: I follow through, keep details clean, and help teams move faster with fewer misunderstandings.</p>
-      <p>I also do freelance photography as a side project, which strengthens my eye for branding, storytelling, and presentation — skills that translate directly into marketing and customer experience.</p>
+<!-- ==================== ABOUT SECTION ==================== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <h2>About</h2>
+      <p class="muted">I'm a people-first, execution-driven professional focused on Marketing, Sales, and Management roles.</p>
     </div>
 
-    <div class="panel">
-      <h3>How I work</h3>
-      <ul class="list">
-        <li><strong>Customer clarity:</strong> I ask the right questions and translate needs into next steps.</li>
-        <li><strong>Relationship-building:</strong> I communicate with warmth, confidence, and professionalism.</li>
-        <li><strong>Execution:</strong> I'm structured — timelines, follow-ups, documentation, and results.</li>
-        <li><strong>Cross-cultural support:</strong> I'm comfortable bridging language and cultural gaps.</li>
-      </ul>
+    <div class="split">
+      <div class="panel">
+        <h3>Who I am</h3>
+        <p class="muted">I'm Cindy Li — a bilingual (English/中文) communicator with experience working in client-facing and coordination-heavy environments. I'm known for being organized, reliable, and easy to work with: I follow through, keep details clean, and help teams move faster with fewer misunderstandings.</p>
+        <p class="muted">I also do freelance photography as a side project, which strengthens my eye for branding, storytelling, and presentation — skills that translate directly into marketing and customer experience.</p>
+      </div>
+
+      <div class="panel">
+        <h3>How I work</h3>
+        <ul class="list">
+          <li><strong>Customer clarity:</strong> I ask the right questions and translate needs into next steps.</li>
+          <li><strong>Relationship-building:</strong> I communicate with warmth, confidence, and professionalism.</li>
+          <li><strong>Execution:</strong> I'm structured — timelines, follow-ups, documentation, and results.</li>
+          <li><strong>Cross-cultural support:</strong> I'm comfortable bridging language and cultural gaps.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MARKETING SECTION -->
-<section class="section-content" id="marketing-content">
-  <h2>Marketing</h2>
-  <p class="section-subtitle">Content, positioning, and clean execution — with an analytics mindset.</p>
-
-  <div class="project-grid">
-    <article class="project">
-      <div class="project-top">
-        <h3>Bilingual Messaging</h3>
-        <span class="tag">Communication</span>
-      </div>
-      <p>Adapt messaging for bilingual audiences to improve clarity and customer confidence.</p>
-    </article>
-
-    <article class="project">
-      <div class="project-top">
-        <h3>Content Materials</h3>
-        <span class="tag">Content</span>
-      </div>
-      <p>Create clean, persuasive materials with strong offers and clear calls-to-action.</p>
-    </article>
-
-    <article class="project">
-      <div class="project-top">
-        <h3>Performance Mindset</h3>
-        <span class="tag">Analytics</span>
-      </div>
-      <p>Track what works, improve what doesn't — using basic metrics and organized reporting.</p>
-    </article>
-  </div>
-</section>
-
-<!-- SALES SECTION -->
-<section class="section-content" id="sales-content">
-  <h2>Sales</h2>
-  <p class="section-subtitle">Customer communication, persuasion, and consistent follow-through.</p>
-
-  <div class="split">
-    <div class="panel">
-      <h3>Sales strengths</h3>
-      <ul class="list">
-        <li>Warm, professional outreach and relationship-building.</li>
-        <li>Ability to explain value clearly and handle objections respectfully.</li>
-        <li>Strong follow-up habits and reliable responsiveness.</li>
-        <li>Comfortable working with diverse customers (bilingual support).</li>
-      </ul>
+<!-- ==================== MARKETING SECTION ==================== -->
+<section class="section" id="marketing">
+  <div class="container">
+    <div class="section-head">
+      <h2>Marketing</h2>
+      <p class="muted">Content, positioning, and clean execution — with an analytics mindset.</p>
     </div>
 
-    <div class="panel">
-      <h3>How I add value</h3>
-      <ul class="list">
-        <li>Translate needs into clear next steps for clients and internal teams.</li>
-        <li>Keep communication organized (notes, tracking, reminders).</li>
-        <li>Create clear messages that increase conversion and reduce confusion.</li>
-      </ul>
+    <div class="project-grid">
+      <article class="project">
+        <div class="project-top">
+          <h3>Bilingual Messaging</h3>
+          <span class="tag">Communication</span>
+        </div>
+        <p class="muted">Adapt messaging for bilingual audiences to improve clarity and customer confidence.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Content Materials</h3>
+          <span class="tag">Content</span>
+        </div>
+        <p class="muted">Create clean, persuasive materials with strong offers and clear calls-to-action.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Performance Mindset</h3>
+          <span class="tag">Analytics</span>
+        </div>
+        <p class="muted">Track what works, improve what doesn't — using basic metrics and organized reporting.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- PHOTOGRAPHY SECTION -->
-<section class="section-content" id="photography-content">
-  <h2>Freelance Photography</h2>
-  <p class="section-subtitle">Visual storytelling that supports branding, marketing content, and real-world client communication.</p>
+<!-- ==================== SALES SECTION ==================== -->
+<section class="section" id="sales">
+  <div class="container">
+    <div class="section-head">
+      <h2>Sales</h2>
+      <p class="muted">Customer communication, persuasion, and consistent follow-through.</p>
+    </div>
 
-  <div class="photo-grid">
-    <div class="photo-item">
-      <img src="images/project.jpg" alt="Portrait photography sample">
-      <div class="photo-caption">Portrait</div>
-    </div>
-    <div class="photo-item">
-      <img src="images/experience.jpg" alt="Event photography sample">
-      <div class="photo-caption">Event</div>
-    </div>
-    <div class="photo-item">
-      <img src="images/skills.jpg" alt="Street/lifestyle photography sample">
-      <div class="photo-caption">Street / Lifestyle</div>
-    </div>
-    <div class="photo-item">
-      <img src="images/education.jpg" alt="Brand content photography sample">
-      <div class="photo-caption">Brand Content</div>
+    <div class="split">
+      <div class="panel">
+        <h3>Sales strengths</h3>
+        <ul class="list">
+          <li>Warm, professional outreach and relationship-building.</li>
+          <li>Ability to explain value clearly and handle objections respectfully.</li>
+          <li>Strong follow-up habits and reliable responsiveness.</li>
+          <li>Comfortable working with diverse customers (bilingual support).</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>How I add value</h3>
+        <ul class="list">
+          <li>Translate needs into clear next steps for clients and internal teams.</li>
+          <li>Keep communication organized (notes, tracking, reminders).</li>
+          <li>Create clear messages that increase conversion and reduce confusion.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- VOLUNTEER SECTION -->
-<section class="section-content" id="volunteer-content">
-  <h2>Volunteer</h2>
-  <p class="section-subtitle">Community work that strengthened my communication, patience, and reliability.</p>
+<!-- ==================== PHOTOGRAPHY SECTION ==================== -->
+<section class="section" id="photography">
+  <div class="container">
+    <div class="section-head">
+      <h2>Freelance Photography</h2>
+      <p class="muted">Visual storytelling that supports branding, marketing content, and real-world client communication.</p>
+    </div>
 
-  <div class="project-grid">
-    <article class="project">
-      <div class="project-top">
-        <h3>Team Read — Reading Support (2nd–3rd Grade)</h3>
-        <span class="tag">Education</span>
+    <div class="photo-grid">
+      <div class="photo-item">
+        <img src="images/project.jpg" alt="Portrait photography sample">
+        <div class="photo-caption">Portrait</div>
       </div>
-      <p>Supported students with reading practice and confidence-building through patient coaching.</p>
-    </article>
-
-    <article class="project">
-      <div class="project-top">
-        <h3>Legacy House — Mail Translation for Elders</h3>
-        <span class="tag">Service</span>
+      <div class="photo-item">
+        <img src="images/experience.jpg" alt="Event photography sample">
+        <div class="photo-caption">Event</div>
       </div>
-      <p>Helped elders understand important mail by translating and clarifying key details.</p>
-    </article>
-
-    <article class="project">
-      <div class="project-top">
-        <h3>Recreational Cleanup</h3>
-        <span class="tag">Community</span>
+      <div class="photo-item">
+        <img src="images/skills.jpg" alt="Street/lifestyle photography sample">
+        <div class="photo-caption">Street / Lifestyle</div>
       </div>
-      <p>Participated in local cleanups to maintain public spaces and strengthen communities.</p>
-    </article>
+      <div class="photo-item">
+        <img src="images/education.jpg" alt="Brand content photography sample">
+        <div class="photo-caption">Brand Content</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- LANGUAGES SECTION -->
-<section class="section-content" id="languages-content">
-  <h2>Languages</h2>
-  <p class="section-subtitle">Professional communication across multiple languages.</p>
+<!-- ==================== VOLUNTEER SECTION ==================== -->
+<section class="section" id="volunteer">
+  <div class="container">
+    <div class="section-head">
+      <h2>Volunteer</h2>
+      <p class="muted">Community work that strengthened my communication, patience, and reliability.</p>
+    </div>
 
-  <div class="pill-grid">
-    <span class="pill">English — Fluent</span>
-    <span class="pill">Chinese (Mandarin/Cantonese) — Fluent</span>
-    <span class="pill">Japanese — Limited working proficiency</span>
-    <span class="pill">Thai — Limited working proficiency</span>
-    <span class="pill">Italian — Limited working proficiency</span>
+    <div class="project-grid">
+      <article class="project">
+        <div class="project-top">
+          <h3>Team Read — Reading Support (2nd–3rd Grade)</h3>
+          <span class="tag">Education</span>
+        </div>
+        <p class="muted">Supported students with reading practice and confidence-building through patient coaching.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Legacy House — Mail Translation for Elders</h3>
+          <span class="tag">Service</span>
+        </div>
+        <p class="muted">Helped elders understand important mail by translating and clarifying key details.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-top">
+          <h3>Recreational Cleanup</h3>
+          <span class="tag">Community</span>
+        </div>
+        <p class="muted">Participated in local cleanups to maintain public spaces and strengthen communities.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LANGUAGES SECTION ==================== -->
+<section class="section" id="languages">
+  <div class="container">
+    <div class="section-head">
+      <h2>Languages</h2>
+      <p class="muted">Professional communication across multiple languages.</p>
+    </div>
+
+    <div class="pill-grid">
+      <span class="pill">English — Fluent</span>
+      <span class="pill">Chinese (Mandarin/Cantonese) — Fluent</span>
+      <span class="pill">Japanese — Limited working proficiency</span>
+      <span class="pill">Thai — Limited working proficiency</span>
+      <span class="pill">Italian — Limited working proficiency</span>
+    </div>
   </div>
 </section>
 
@@ -284,20 +299,20 @@
   <div class="container">
     <div class="section-head">
       <h2>Hire Me</h2>
-      <p class="section-subtitle">Fast reply, clear communication, and reliable execution.</p>
+      <p class="muted">Fast reply, clear communication, and reliable execution.</p>
     </div>
 
     <div class="hire-grid">
       <div class="panel">
         <h3>Contact</h3>
-        <p>Email is best. Include role title + timeline.</p>
+        <p class="muted">Email is best. Include role title + timeline.</p>
 
         <div class="contact-list">
           <a class="contact-item" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
           <a class="contact-item" href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
 
-        <p class="tiny">Replace email/LinkedIn with your real links.</p>
+        <p class="tiny muted">Replace email/LinkedIn with your real links.</p>
       </div>
 
       <form class="panel form" id="contactForm">
@@ -319,7 +334,7 @@
         </label>
 
         <button class="btn btn-primary" type="submit">Send</button>
-        <p class="tiny">
+        <p class="tiny muted">
           This is a demo form. Use Formspree/Netlify Forms to receive messages.
         </p>
       </form>
@@ -330,8 +345,8 @@
 <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
   <div class="container footer-wrap">
-    <span class="tiny">© <span id="year"></span> Cindy Li</span>
-    <span class="tiny">Built with HTML/CSS/JS</span>
+    <span class="muted tiny">© <span id="year"></span> Cindy Li</span>
+    <span class="muted tiny">Built with HTML/CSS/JS</span>
   </div>
 </footer>
 ```

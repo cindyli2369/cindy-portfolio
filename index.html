@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cindy J Li | Portfolio</title>
 
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -28,6 +27,7 @@
         <a href="#marketing">Marketing</a>
         <a href="#sales">Sales</a>
         <a href="#management">Management</a>
+        <a href="#volunteer">Volunteer</a>
         <a href="#contact">Hire Me</a>
       </nav>
     </div>
@@ -39,6 +39,7 @@
       <div class="hero-text">
         <h1>CINDY J LI</h1>
         <h2>Management • Sales • Marketing</h2>
+
         <p>
           Results-driven professional with strong client communication,
           bilingual fluency (English/中文), and proven execution across
@@ -46,149 +47,151 @@
         </p>
 
         <div class="hero-buttons">
-          <!-- replace # with your real resume/linkedin -->
           <a class="btn" href="#" target="_blank" rel="noopener">View Resume</a>
           <a class="btn-outline" href="#" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
 
       <div class="hero-image">
-        <!-- IMPORTANT: images are in /images/ on GitHub -->
         <img src="images/profile.jpg" alt="Cindy Li headshot" />
       </div>
     </div>
   </section>
 
   <!-- NAV CARDS -->
-  <section class="cards-section" id="quickpicks">
-    <h2 class="cards-title">Today’s Hot Picks for Recruiter</h2>
+  <section class="cards-section" id="quicknav">
+    <div class="container">
+      <h2 class="cards-title">Today's Hot Picks for Recruiter</h2>
 
-    <div class="card-grid">
-      <button class="card"
-        style="--bg:url('images/experience.jpg')"
-        data-modal="experience"
-        data-title="Experience"
-        data-subtitle="Operations • Marketing • Client Communication"
-        data-body="Experience across operations, marketing, and client communication. Strong ability to manage workflows, coordinate teams, and build long-term client relationships."
-      >
-        <span class="card-overlay"></span>
-        <span class="card-text">Experience</span>
-      </button>
+      <div class="card-grid">
+        <button class="card" type="button"
+          data-modal="experience"
+          style="--bg:url('images/experience.jpg');">
+          <span class="card-overlay"></span>
+          <span class="card-text">Experience</span>
+        </button>
 
-      <button class="card"
-        style="--bg:url('images/education.jpg')"
-        data-modal="education"
-        data-title="Education"
-        data-subtitle="University of Washington"
-        data-body="B.A. International Studies • Business Administration Minor. Coursework and projects focused on global systems, strategy, and real-world execution."
-      >
-        <span class="card-overlay"></span>
-        <span class="card-text">Education</span>
-      </button>
+        <button class="card" type="button"
+          data-modal="education"
+          style="--bg:url('images/education.jpg');">
+          <span class="card-overlay"></span>
+          <span class="card-text">Education</span>
+        </button>
 
-      <button class="card"
-        style="--bg:url('images/skills.jpg')"
-        data-modal="skills"
-        data-title="Skills"
-        data-subtitle="What I bring to the team"
-        data-body="Sales communication • Client relationship building • Marketing strategy • Workflow management • Cross-cultural communication • English / 中文 bilingual."
-      >
-        <span class="card-overlay"></span>
-        <span class="card-text">Skills</span>
-      </button>
-    </div>
+        <button class="card" type="button"
+          data-modal="skills"
+          style="--bg:url('images/skills.jpg');">
+          <span class="card-overlay"></span>
+          <span class="card-text">Skills</span>
+        </button>
+      </div>
 
-    <h2 class="cards-title">Get to Know Me</h2>
+      <h2 class="cards-title subtle">Get to Know Me</h2>
 
-    <div class="card-grid">
-      <button class="card"
-        style="--bg:url('images/project.jpg')"
-        data-modal="projects"
-        data-title="Projects"
-        data-subtitle="Portfolio • Leadership • Entrepreneurship"
-        data-body="Portfolio website development, marketing projects, and entrepreneurial ventures (including a transportation service startup)."
-      >
-        <span class="card-overlay"></span>
-        <span class="card-text">Projects</span>
-      </button>
+      <div class="card-grid">
+        <button class="card" type="button"
+          data-modal="projects"
+          style="--bg:url('images/project.jpg');">
+          <span class="card-overlay"></span>
+          <span class="card-text">Projects</span>
+        </button>
 
-      <button class="card"
-        style="--bg:url('images/volunteer.jpg')"
-        data-modal="volunteer"
-        data-title="Volunteer"
-        data-subtitle="Community-focused work"
-        data-body="Team Read mentor for elementary students • Translation assistance for seniors at Legacy House • Environmental cleanup volunteer."
-      >
-        <span class="card-overlay"></span>
-        <span class="card-text">Volunteer</span>
-      </button>
+        <button class="card" type="button"
+          data-modal="volunteerModal"
+          style="--bg:url('images/volunteer.jpg');">
+          <span class="card-overlay"></span>
+          <span class="card-text">Volunteer</span>
+        </button>
 
-      <button class="card"
-        style="--bg:url('images/photography.jpg')"
-        data-modal="photography"
-        data-title="Photography"
-        data-subtitle="Freelance photo work"
-        data-body="Freelance photography capturing everyday life, urban moments, and travel experiences."
-      >
-        <span class="card-overlay"></span>
-        <span class="card-text">Photography</span>
-      </button>
+        <button class="card" type="button"
+          data-modal="photography"
+          style="--bg:url('images/photography.jpg');">
+          <span class="card-overlay"></span>
+          <span class="card-text">Photography</span>
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- SECTIONS -->
-  <main>
-    <section id="about" class="section">
+  <!-- SECTIONS (for navbar anchors) -->
+  <section class="section" id="about">
+    <div class="container">
       <h2>About</h2>
-      <p>Coming soon…</p>
-    </section>
+      <p>
+        I’m a people-first, execution-driven professional focused on Marketing, Sales, and Management roles.
+      </p>
+      <p>
+        Known for being organized, reliable, and detail-oriented, I help teams move faster with fewer misunderstandings.
+      </p>
+    </div>
+  </section>
 
-    <section id="marketing" class="section dark">
+  <section class="section dark" id="marketing">
+    <div class="container">
       <h2>Marketing</h2>
-      <p>Coming soon…</p>
-    </section>
+      <p>Brand awareness, client communication, structured planning, and creative storytelling.</p>
+    </div>
+  </section>
 
-    <section id="sales" class="section">
+  <section class="section" id="sales">
+    <div class="container">
       <h2>Sales</h2>
-      <p>Coming soon…</p>
-    </section>
+      <p>Relationship-building, negotiation, client coordination, and closing through trust and clarity.</p>
+    </div>
+  </section>
 
-    <section id="management" class="section dark">
+  <section class="section dark" id="management">
+    <div class="container">
       <h2>Management</h2>
-      <p>Coming soon…</p>
-    </section>
+      <p>Workflow coordination, stakeholder communication, and team organization to drive outcomes.</p>
+    </div>
+  </section>
 
-    <section id="volunteerSection" class="section">
+  <section class="section" id="volunteer">
+    <div class="container">
       <h2>Volunteer</h2>
-      <p>Coming soon…</p>
-    </section>
+      <ul class="clean-list">
+        <li>Team Read – Reading mentor for 2nd & 3rd graders</li>
+        <li>Legacy House – Mail translation support for seniors</li>
+        <li>Recreational clean-up volunteer</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="contact" class="section dark">
+  <section class="section dark" id="contact">
+    <div class="container">
       <h2>Hire Me</h2>
       <p>Open to Marketing, Sales, and Management opportunities.</p>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Cindy Li</p>
+    <div class="container">
+      <p>© <span id="year"></span> Cindy Li</p>
+    </div>
   </footer>
 
-  <!-- ONE GLASS MODAL (reused for all cards) -->
-  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="Close popup">×</button>
+  <!-- GLASS MODAL (one modal reused for all cards) -->
+  <div class="modal" id="glassModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
 
-      <div class="modal-header">
-        <h3 id="modalTitle"></h3>
-        <p id="modalSubtitle" class="modal-subtitle"></p>
-      </div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Close" data-close>✕</button>
 
-      <div class="modal-body">
-        <p id="modalBody"></p>
-      </div>
+      <div class="modal-glass">
+        <div class="modal-header">
+          <h3 id="modalTitle">Title</h3>
+          <p id="modalSubtitle" class="muted">Subtitle</p>
+        </div>
 
-      <div class="modal-actions">
-        <button class="modal-btn" id="modalOk">Done</button>
+        <div class="modal-body" id="modalBody">
+          <!-- injected by JS -->
+        </div>
+
+        <div class="modal-actions">
+          <a class="btn" id="modalPrimary" href="#contact">Hire Me</a>
+          <button class="btn-outline" type="button" data-close>Close</button>
+        </div>
       </div>
     </div>
   </div>

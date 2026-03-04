@@ -1,60 +1,8 @@
 /**
 
-- Portfolio - Modal & Navigation
-- Handles card clicks, modal display, and form submission
+- Portfolio - Navigation & Forms
+- Handles mobile menu, form submission, and smooth scrolling
   */
-
-// ==================== MODAL FUNCTIONALITY ====================
-
-const modal = document.getElementById(‘contentModal’);
-const modalClose = document.getElementById(‘modalClose’);
-const modalBody = document.getElementById(‘modalBody’);
-const cards = document.querySelectorAll(’.card’);
-
-// Open modal when card is clicked
-cards.forEach(card => {
-card.addEventListener(‘click’, () => {
-const sectionId = card.getAttribute(‘data-section’);
-const contentElement = document.getElementById(sectionId + ‘-content’);
-
-```
-if (contentElement) {
-  // Clone the content to avoid duplicating DOM elements
-  const contentClone = contentElement.cloneNode(true);
-  modalBody.innerHTML = '';
-  modalBody.appendChild(contentClone);
-  
-  // Show modal
-  modal.classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-```
-
-});
-});
-
-// Close modal function
-function closeModal() {
-modal.classList.remove(‘show’);
-document.body.style.overflow = ‘auto’;
-}
-
-// Close button click
-modalClose.addEventListener(‘click’, closeModal);
-
-// Close modal when clicking outside content
-modal.addEventListener(‘click’, (e) => {
-if (e.target === modal) {
-closeModal();
-}
-});
-
-// Close modal on Escape key
-document.addEventListener(‘keydown’, (e) => {
-if (e.key === ‘Escape’ && modal.classList.contains(‘show’)) {
-closeModal();
-}
-});
 
 // ==================== MOBILE MENU ====================
 

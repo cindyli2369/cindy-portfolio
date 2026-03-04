@@ -14,7 +14,6 @@
   --radius: 18px;
   --max: 1180px;
 
-  /* spacing scales */
   --pad-x: clamp(18px, 4vw, 70px);
   --pad-y: clamp(70px, 7vw, 120px);
 }
@@ -90,9 +89,7 @@ a { color: inherit; }
     url("cafe.jpg") center/cover no-repeat;
 }
 
-.hero-text{
-  max-width: 640px;
-}
+.hero-text{ max-width: 640px; }
 
 .hero h1{
   font-size: clamp(40px, 5vw, 64px);
@@ -152,10 +149,7 @@ a { color: inherit; }
   transform: translateY(-1px);
 }
 
-.hero-image{
-  display: flex;
-  justify-content: center;
-}
+.hero-image{ display: flex; justify-content: center; }
 
 .hero-image img{
   width: clamp(190px, 22vw, 300px);
@@ -167,7 +161,7 @@ a { color: inherit; }
 }
 
 /* =========================
-   SECTIONS (optional)
+   SECTIONS
 ========================= */
 .section{
   padding: 80px var(--pad-x);
@@ -181,17 +175,15 @@ a { color: inherit; }
   margin-bottom: 18px;
 }
 
-.section p, .section ul{
+.section p{
   color: rgba(255,255,255,0.78);
   max-width: 75ch;
 }
 
-.dark{
-  background: #111;
-}
+.dark{ background: #111; }
 
 /* =========================
-   CARDS SECTION
+   CARDS
 ========================= */
 .cards-section{
   padding: 80px var(--pad-x);
@@ -206,7 +198,6 @@ a { color: inherit; }
   margin-bottom: 28px;
 }
 
-/* responsive grid: 3 desktop, 2 tablet, 1 mobile */
 .card-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -255,10 +246,8 @@ a { color: inherit; }
 }
 
 /* =========================
-   APPLE-STYLE GLASS MODAL
+   APPLE GLASS MODAL
 ========================= */
-
-/* Use [hidden] so JS can toggle without layout bugs */
 .modal[hidden]{ display:none !important; }
 
 .modal{
@@ -287,7 +276,6 @@ a { color: inherit; }
   animation: modalIn 0.34s cubic-bezier(.2,.9,.2,1) forwards;
 }
 
-/* subtle “glass highlight” */
 .modal-content::before{
   content:"";
   position:absolute;
@@ -333,7 +321,7 @@ a { color: inherit; }
 }
 
 /* =========================
-   ACCESSIBILITY + MOTION
+   ACCESSIBILITY + RESPONSIVE
 ========================= */
 :focus-visible{
   outline: 3px solid rgba(212,175,55,0.75);
@@ -344,10 +332,6 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce){
   *{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-
-/* =========================
-   RESPONSIVE BREAKPOINTS
-========================= */
 
 /* tablet */
 @media (max-width: 980px){

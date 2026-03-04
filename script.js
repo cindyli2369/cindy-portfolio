@@ -1,64 +1,78 @@
-/**
+// ========= Apple-style Glass Modal System =========
 
-- Portfolio - Navigation & Forms
-- Handles mobile menu, form submission, and smooth scrolling
-  */
+let activeModal = null;
+let lastFocusedElement = null;
 
-// ==================== MOBILE MENU ====================
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
 
-const navToggle = document.getElementById(‘navToggle’);
-const navMenu = document.getElementById(‘navMenu’);
+  // store focus
+  lastFocusedElement = document.activeElement;
 
-if (navToggle && navMenu) {
-navToggle.addEventListener(‘click’, () => {
-const isOpen = navMenu.classList.toggle(‘open’);
-navToggle.setAttribute(‘aria-expanded’, String(isOpen));
-});
+  // show modal
+  modal.hidden = false;
+  modal.setAttribute("aria-hidden", "false");
+  activeModal = modal;
 
-// Close menu when a link is clicked
-navMenu.querySelectorAll(‘a’).forEach(link => {
-link.addEventListener(‘click’, () => {
-navMenu.classList.remove(‘open’);
-navToggle.setAttribute(‘aria-expanded’, ‘false’);
-});
-});
+  // lock background scroll
+  document.body.style.overflow = "hidden";
+
+  // focus close button (for accessibility)
+  const closeBtn = modal.querySelector(".close");
+  if (closeBtn) closeBtn.focus();
 }
 
-// ==================== YEAR DISPLAY ====================
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
 
-const yearElement = document.getElementById(‘year’);
-if (yearElement) {
-yearElement.textContent = String(new Date().getFullYear());
+  modal.hidden = true;
+  modal.setAttribute("aria-hidden", "true");
+
+  // unlock scroll only if no other modal is open
+  document.body.style.overflow = "";
+
+  activeModal = null;
+
+  // restore focus
+  if (lastFocusedElement) lastFocusedElement.focus();
 }
 
-// ==================== CONTACT FORM ====================
+// close if clicking outside content
+document.addEventListener("click", (e) => {
+  const modal = e.target.closest(".modal");
+  if (!modal) return;
 
-const contactForm = document.getElementById(‘contactForm’);
-if (contactForm) {
-contactForm.addEventListener(‘submit’, (e) => {
-e.preventDefault();
-alert(‘Thanks for reaching out! We'll get back to you soon. To enable email delivery, connect Formspree or Netlify Forms.’);
-contactForm.reset();
+  const content = e.target.closest(".modal-content");
+  if (!content) {
+    closeModal(modal.id);
+  }
 });
-}
 
-// ==================== SMOOTH SCROLL NAVIGATION ====================
+// ESC to close
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && activeModal) {
+    closeModal(activeModal.id);
+  }
 
-document.querySelectorAll(‘a[href^=”#”]’).forEach(anchor => {
-anchor.addEventListener(‘click’, function (e) {
-const href = this.getAttribute(‘href’);
-if (href === ‘#’ || href === ‘#top’) return;
+  // simple focus trap inside modal
+  if (e.key === "Tab" && activeModal) {
+    const focusables = activeModal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
 
-```
-const target = document.querySelector(href);
-if (target) {
-  e.preventDefault();
-  target.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
-}
-```
+    if (!focusables.length) return;
 
-});
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
 });

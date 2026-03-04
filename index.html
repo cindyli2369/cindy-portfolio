@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cindy J Li | Portfolio</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -15,92 +18,94 @@
   <header class="navbar">
     <div class="logo">CINDY J LI</div>
 
-    <nav>
+    <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#marketing">Marketing</a>
       <a href="#sales">Sales</a>
       <a href="#management">Management</a>
-      <a href="#volunteerSection">Volunteer</a>
+      <a href="#volunteer">Volunteer</a>
       <a href="#contact">Hire Me</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero-text">
       <h1>CINDY J LI</h1>
       <h2>Management • Sales • Marketing</h2>
 
       <p>
         Results-driven professional with strong client communication,
-        bilingual fluency (English/中文), and proven execution across
-        fast-paced environments.
+        bilingual fluency (English/中文), and proven execution across fast-paced environments.
       </p>
 
       <div class="hero-buttons">
-        <!-- put your real links -->
-        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
-        <a class="btn-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- Replace # with your PDF/link later -->
+        <a class="btn" href="#" target="_blank" rel="noopener">View Resume</a>
+        <a class="btn-outline" href="#" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
 
-    <div class="hero-image">
-      <img src="profile.jpg" alt="Cindy Li headshot">
+    <div class="hero-image" aria-label="Headshot">
+      <!-- IMPORTANT: images/ path -->
+      <img src="images/profile.jpg" alt="Cindy Li headshot" />
     </div>
   </section>
 
   <!-- NAV CARDS -->
-  <section class="cards-section" id="quicknav">
+  <section class="section cards-section" id="quicknav">
     <h2 class="cards-title">Today's Hot Picks for Recruiter</h2>
 
     <div class="card-grid">
+      <button class="card" type="button"
+        data-modal="experience"
+        style="--bg:url('images/experience.jpg')">
+        <span class="card-overlay"></span>
+        <span class="card-text">Experience</span>
+      </button>
 
-      <div class="card" role="button" tabindex="0"
-           onclick="openModal('experience')"
-           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('experience')}"
-           style="background-image:url('path.jpg')">
-        <div class="card-text">Experience</div>
-      </div>
+      <button class="card" type="button"
+        data-modal="education"
+        style="--bg:url('images/education.jpg')">
+        <span class="card-overlay"></span>
+        <span class="card-text">Education</span>
+      </button>
 
-      <div class="card" role="button" tabindex="0"
-           onclick="openModal('education')"
-           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('education')}"
-           style="background-image:url('education.jpg')">
-        <div class="card-text">Education</div>
-      </div>
+      <button class="card" type="button"
+        data-modal="skills"
+        style="--bg:url('images/skills.jpg')">
+        <span class="card-overlay"></span>
+        <span class="card-text">Skills</span>
+      </button>
+    </div>
 
-      <div class="card" role="button" tabindex="0"
-           onclick="openModal('skills')"
-           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('skills')}"
-           style="background-image:url('skills.jpg')">
-        <div class="card-text">Skills</div>
-      </div>
+    <h2 class="cards-title">Get to Know ME</h2>
 
-      <div class="card" role="button" tabindex="0"
-           onclick="openModal('projects')"
-           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('projects')}"
-           style="background-image:url('project.jpg')">
-        <div class="card-text">Projects</div>
-      </div>
+    <div class="card-grid">
+      <button class="card" type="button"
+        data-modal="projects"
+        style="--bg:url('images/project.jpg')">
+        <span class="card-overlay"></span>
+        <span class="card-text">Projects</span>
+      </button>
 
-      <div class="card" role="button" tabindex="0"
-           onclick="openModal('volunteer')"
-           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('volunteer')}"
-           style="background-image:url('volunteer.jpg')">
-        <div class="card-text">Volunteer</div>
-      </div>
+      <button class="card" type="button"
+        data-modal="volunteer"
+        style="--bg:url('images/volunteer.jpg')">
+        <span class="card-overlay"></span>
+        <span class="card-text">Volunteer</span>
+      </button>
 
-      <div class="card" role="button" tabindex="0"
-           onclick="openModal('photo')"
-           onkeydown="if(event.key==='Enter'||event.key===' '){openModal('photo')}"
-           style="background-image:url('photography.jpg')">
-        <div class="card-text">Photography</div>
-      </div>
-
+      <button class="card" type="button"
+        data-modal="photography"
+        style="--bg:url('images/photography.jpg')">
+        <span class="card-overlay"></span>
+        <span class="card-text">Photography</span>
+      </button>
     </div>
   </section>
 
-  <!-- OPTIONAL SECTIONS (for navbar links) -->
+  <!-- SECTIONS (placeholders, keep for navbar scroll) -->
   <section id="about" class="section">
     <h2>About</h2>
     <p>Coming soon…</p>
@@ -121,85 +126,40 @@
     <p>Coming soon…</p>
   </section>
 
-  <section id="volunteerSection" class="section">
+  <section id="volunteer" class="section">
     <h2>Volunteer</h2>
     <p>Coming soon…</p>
   </section>
 
   <section id="contact" class="section dark">
     <h2>Hire Me</h2>
-    <p>Open to opportunities. Contact coming soon…</p>
+    <p>Open to Marketing, Sales, and Management opportunities.</p>
   </section>
 
-  <!-- MODALS (IMPORTANT: add hidden + aria-hidden initially) -->
+  <footer>
+    <p>© <span id="year"></span> Cindy Li</p>
+  </footer>
 
-  <div id="experience" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="experienceTitle">
-    <div class="modal-content">
-      <button class="close" onclick="closeModal('experience')" aria-label="Close">&times;</button>
-      <h2 id="experienceTitle">Experience</h2>
-      <p>
-        Experience across operations, marketing and client communication.
-        Strong ability to manage workflows, coordinate teams, and build
-        long-term client relationships.
-      </p>
-    </div>
-  </div>
+  <!-- GLASS MODAL (single reusable modal) -->
+  <div class="modal" id="glassModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
 
-  <div id="education" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="educationTitle">
-    <div class="modal-content">
-      <button class="close" onclick="closeModal('education')" aria-label="Close">&times;</button>
-      <h2 id="educationTitle">Education</h2>
-      <p>
-        University of Washington<br/>
-        International Studies<br/>
-        Business Administration Minor
-      </p>
-    </div>
-  </div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Close modal" data-close="true">✕</button>
 
-  <div id="skills" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="skillsTitle">
-    <div class="modal-content">
-      <button class="close" onclick="closeModal('skills')" aria-label="Close">&times;</button>
-      <h2 id="skillsTitle">Skills</h2>
-      <p>
-        Sales communication • Client relationship building • Marketing strategy<br/>
-        Workflow management • Cross cultural communication<br/>
-        English / Chinese bilingual
-      </p>
-    </div>
-  </div>
+      <div class="modal-hero">
+        <div class="modal-hero-img" id="modalHeroImg" aria-hidden="true"></div>
+      </div>
 
-  <div id="projects" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="projectsTitle">
-    <div class="modal-content">
-      <button class="close" onclick="closeModal('projects')" aria-label="Close">&times;</button>
-      <h2 id="projectsTitle">Projects</h2>
-      <p>
-        Portfolio website development, marketing projects,
-        and entrepreneurial ventures including transportation service startup.
-      </p>
-    </div>
-  </div>
+      <div class="modal-body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
 
-  <div id="volunteer" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="volunteerTitle">
-    <div class="modal-content">
-      <button class="close" onclick="closeModal('volunteer')" aria-label="Close">&times;</button>
-      <h2 id="volunteerTitle">Volunteer</h2>
-      <p>
-        Team Read mentor for elementary students.<br/>
-        Translation assistance for seniors at Legacy House.<br/>
-        Environmental cleanup volunteer.
-      </p>
-    </div>
-  </div>
-
-  <div id="photo" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="photoTitle">
-    <div class="modal-content">
-      <button class="close" onclick="closeModal('photo')" aria-label="Close">&times;</button>
-      <h2 id="photoTitle">Photography</h2>
-      <p>
-        Freelance photography capturing everyday life,
-        urban moments, and travel experiences.
-      </p>
+        <div class="modal-actions">
+          <a class="btn" id="modalPrimary" href="#contact">Hire Me</a>
+          <button class="btn-outline" type="button" data-close="true">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 

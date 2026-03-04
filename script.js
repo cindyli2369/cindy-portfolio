@@ -1,118 +1,89 @@
-// ===== Footer Year =====
+// Year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ===== Modal Data (edit these texts anytime) =====
-const modalContent = {
-  experience: {
-    title: "Experience",
-    text:
-      "Experience across operations, marketing, and client communication. Strong ability to manage workflows, coordinate teams, and build long-term client relationships.",
-    img: "images/experience.jpg",
-    primaryText: "Hire Me",
-    primaryHref: "#contact",
-  },
-  education: {
-    title: "Education",
-    text:
-      "University of Washington — International Studies (Europe & Southeast Asia) with a Business Administration minor.",
-    img: "images/education.jpg",
-    primaryText: "View Resume",
-    primaryHref: "#",
-  },
-  skills: {
-    title: "Skills",
-    text:
-      "Sales communication • Client relationship building • Marketing strategy • Workflow management • Cross-cultural communication • English/中文 bilingual.",
-    img: "images/skills.jpg",
-    primaryText: "Contact",
-    primaryHref: "#contact",
-  },
-  projects: {
-    title: "Projects",
-    text:
-      "Portfolio website development, marketing projects, and entrepreneurial ventures including a transportation service startup concept and community-focused work.",
-    img: "images/project.jpg",
-    primaryText: "See More",
-    primaryHref: "#about",
-  },
-  volunteer: {
-    title: "Volunteer",
-    text:
-      "Team Read mentor for elementary students • Translation assistance for seniors at Legacy House • Environmental clean-up volunteer.",
-    img: "images/volunteer.jpg",
-    primaryText: "Hire Me",
-    primaryHref: "#contact",
-  },
-  photography: {
-    title: "Photography",
-    text:
-      "Freelance photography capturing everyday life, urban moments, and travel experiences.",
-    img: "images/photography.jpg",
-    primaryText: "Contact",
-    primaryHref: "#contact",
-  },
-};
-
-// ===== Modal Elements =====
-const modal = document.getElementById("glassModal");
+// Elements
+const backdrop = document.getElementById("modalBackdrop");
 const modalTitle = document.getElementById("modalTitle");
-const modalText = document.getElementById("modalText");
-const modalHeroImg = document.getElementById("modalHeroImg");
-const modalPrimary = document.getElementById("modalPrimary");
+const modalSubtitle = document.getElementById("modalSubtitle");
+const modalBody = document.getElementById("modalBody");
+const modalClose = document.getElementById("modalClose");
+const modalOk = document.getElementById("modalOk");
 
-let lastFocusedEl = null;
+let lastActiveEl = null;
 
-// Open modal with key
-function openModal(key) {
-  const data = modalContent[key];
-  if (!data) return;
+// Open modal with content from card dataset
+function openModalFromCard(cardEl){
+  lastActiveEl = document.activeElement;
 
-  lastFocusedEl = document.activeElement;
+  const title = cardEl.dataset.title || "Details";
+  const subtitle = cardEl.dataset.subtitle || "";
+  const body = cardEl.dataset.body || "";
 
-  modalTitle.textContent = data.title;
-  modalText.textContent = data.text;
-  modalHeroImg.style.backgroundImage = `url('${data.img}')`;
+  modalTitle.textContent = title;
+  modalSubtitle.textContent = subtitle;
+  modalBody.textContent = body;
 
-  modalPrimary.textContent = data.primaryText || "Hire Me";
-  modalPrimary.setAttribute("href", data.primaryHref || "#contact");
+  backdrop.classList.add("is-open");
+  backdrop.setAttribute("aria-hidden", "false");
 
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
-
-  // Prevent background scroll
+  // lock scroll behind modal
   document.body.style.overflow = "hidden";
 
-  // Focus close button for accessibility
-  const closeBtn = modal.querySelector(".modal-close");
-  closeBtn.focus();
+  // focus close button for accessibility
+  modalClose.focus();
 }
 
-// Close modal
-function closeModal() {
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-
+function closeModal(){
+  backdrop.classList.remove("is-open");
+  backdrop.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 
-  if (lastFocusedEl && typeof lastFocusedEl.focus === "function") {
-    lastFocusedEl.focus();
+  if (lastActiveEl && typeof lastActiveEl.focus === "function"){
+    lastActiveEl.focus();
   }
 }
 
-// Click card -> open modal
-document.querySelectorAll(".card[data-modal]").forEach((card) => {
-  card.addEventListener("click", () => openModal(card.dataset.modal));
+// Click cards
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("click", () => openModalFromCard(card));
+  // keyboard support for button is already built-in, but this helps on some browsers:
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " "){
+      e.preventDefault();
+      openModalFromCard(card);
+    }
+  });
 });
 
-// Close when clicking backdrop or any [data-close]
-modal.addEventListener("click", (e) => {
-  const shouldClose = e.target && e.target.getAttribute("data-close") === "true";
-  if (shouldClose) closeModal();
+// Close actions
+modalClose.addEventListener("click", closeModal);
+modalOk.addEventListener("click", closeModal);
+
+// Click outside modal closes
+backdrop.addEventListener("click", (e) => {
+  if (e.target === backdrop) closeModal();
 });
 
-// ESC to close
+// ESC closes
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.classList.contains("is-open")) {
+  if (e.key === "Escape" && backdrop.classList.contains("is-open")){
     closeModal();
   }
+});
+
+// Mobile nav toggle
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+navToggle?.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("is-open");
+  navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll(".nav-links a").forEach(a => {
+  a.addEventListener("click", () => {
+    navLinks.classList.remove("is-open");
+    navToggle?.setAttribute("aria-expanded", "false");
+  });
 });

@@ -63,9 +63,13 @@ display: flex;
 align-items: center;
 gap: 8px;
 text-decoration: none;
-font-weight: 800;
+font-weight: 900;
 font-size: 20px;
 letter-spacing: 2px;
+color: var(–gold);
+}
+
+.brand-text {
 color: var(–gold);
 }
 
@@ -99,6 +103,19 @@ background: none;
 border: none;
 cursor: pointer;
 color: #ffffff;
+font-size: 24px;
+}
+
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border-width: 0;
 }
 
 /* ===================== */
@@ -112,7 +129,7 @@ justify-content: space-between;
 gap: 60px;
 padding: 100px 0;
 background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-url(“cafe_jpg.jpeg”) center/cover no-repeat;
+url(“images/cafe.jpg”) center/cover no-repeat;
 background-attachment: fixed;
 }
 
@@ -140,6 +157,7 @@ font-size: 56px;
 font-weight: 900;
 margin-bottom: 15px;
 letter-spacing: -1px;
+color: #ffffff;
 }
 
 .hero-role {
@@ -222,8 +240,21 @@ transform: translateY(-2px);
 }
 
 /* ===================== */
-/* SECTIONS              */
+/* SECTIONS & INTRO      */
 /* ===================== */
+
+.sections-intro {
+padding: 80px 0;
+background-color: var(–bg-dark);
+}
+
+.intro-title {
+font-size: 36px;
+font-weight: 800;
+color: var(–gold);
+margin-bottom: 50px;
+letter-spacing: -0.5px;
+}
 
 .section {
 padding: 80px 0;
@@ -241,6 +272,12 @@ color: var(–gold);
 letter-spacing: -0.5px;
 }
 
+.section-subtitle {
+color: var(–text-muted);
+font-size: 16px;
+margin-bottom: 40px;
+}
+
 .section p,
 .section ul {
 color: var(–text-muted);
@@ -253,6 +290,199 @@ font-size: 16px;
 
 .section.dark {
 background-color: var(–bg-darker);
+}
+
+.tiny {
+font-size: 12px;
+color: var(–text-dim);
+}
+
+/* ===================== */
+/* CARD GRID (NAV)      */
+/* ===================== */
+
+.card-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+}
+
+.card {
+position: relative;
+height: 220px;
+border-radius: 16px;
+overflow: hidden;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+transition: all 0.3s ease;
+box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+cursor: pointer;
+border: none;
+padding: 0;
+}
+
+.card:hover {
+transform: scale(1.05);
+box-shadow: 0 14px 40px rgba(212, 175, 55, 0.2);
+border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.card-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to top,
+rgba(0,0,0,0.75) 0%,
+rgba(0,0,0,0.35) 50%,
+rgba(0,0,0,0.1) 100%
+);
+transition: all 0.3s ease;
+}
+
+.card:hover .card-overlay {
+background: linear-gradient(
+to top,
+rgba(0,0,0,0.85) 0%,
+rgba(0,0,0,0.45) 50%,
+rgba(0,0,0,0.2) 100%
+);
+}
+
+.card-text {
+position: absolute;
+bottom: 18px;
+left: 18px;
+font-size: 24px;
+font-weight: 700;
+color: white;
+letter-spacing: 0.5px;
+z-index: 2;
+}
+
+/* ===================== */
+/* MODAL STYLES          */
+/* ===================== */
+
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.8);
+z-index: 1000;
+overflow-y: auto;
+animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+.modal-content {
+background-color: var(–bg-darker);
+border-radius: 12px;
+padding: 40px;
+max-width: 800px;
+width: 90%;
+position: relative;
+max-height: 90vh;
+overflow-y: auto;
+animation: slideUp 0.3s ease;
+box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+@keyframes slideUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.modal-close {
+position: absolute;
+top: 20px;
+right: 20px;
+background: none;
+border: none;
+color: var(–gold);
+font-size: 32px;
+cursor: pointer;
+transition: color 0.3s ease;
+padding: 0;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.modal-close:hover {
+color: var(–gold-light);
+}
+
+#modalBody {
+color: #ffffff;
+}
+
+#modalBody h2 {
+font-size: 36px;
+font-weight: 800;
+color: var(–gold);
+margin-bottom: 15px;
+}
+
+#modalBody h3 {
+font-size: 20px;
+font-weight: 700;
+color: #ffffff;
+margin: 25px 0 15px;
+}
+
+#modalBody p {
+color: var(–text-muted);
+line-height: 1.8;
+margin-bottom: 15px;
+}
+
+#modalBody ul {
+list-style: none;
+padding: 0;
+}
+
+#modalBody li {
+color: var(–text-muted);
+margin-bottom: 12px;
+padding-left: 8px;
+}
+
+#modalBody li strong {
+color: #ffffff;
+}
+
+/* ===================== */
+/* SECTION CONTENT HIDDEN */
+/* ===================== */
+
+.section-content {
+display: none;
 }
 
 /* ===================== */
@@ -277,6 +507,12 @@ margin-bottom: 20px;
 color: #ffffff;
 }
 
+.panel p {
+color: var(–text-muted);
+line-height: 1.8;
+margin-bottom: 15px;
+}
+
 .list {
 list-style: none;
 margin: 0;
@@ -287,25 +523,11 @@ padding: 0;
 margin-bottom: 16px;
 color: var(–text-muted);
 padding-left: 8px;
+line-height: 1.6;
 }
 
 .list li strong {
 color: #ffffff;
-}
-
-/* ===================== */
-/* BANNER               */
-/* ===================== */
-
-.banner {
-width: 100%;
-height: 300px;
-border-radius: 12px;
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-margin: 40px 0;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 /* ===================== */
@@ -348,6 +570,11 @@ color: #ffffff;
 margin: 0;
 }
 
+.project p {
+color: var(–text-muted);
+margin: 0;
+}
+
 .tag {
 display: inline-block;
 background-color: rgba(212, 175, 55, 0.1);
@@ -375,7 +602,7 @@ position: relative;
 border-radius: 12px;
 overflow: hidden;
 height: 300px;
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 transition: all 0.3s ease;
 }
 
@@ -509,10 +736,6 @@ resize: vertical;
 min-height: 120px;
 }
 
-.tiny {
-font-size: 12px;
-}
-
 /* ===================== */
 /* FOOTER               */
 /* ===================== */
@@ -598,6 +821,15 @@ grid-template-columns: 1fr;
 flex-direction: column;
 text-align: center;
 }
+
+.modal-content {
+padding: 30px;
+width: 95%;
+}
+
+.card-grid {
+grid-template-columns: repeat(2, 1fr);
+}
 }
 
 @media (max-width: 480px) {
@@ -607,6 +839,10 @@ font-size: 32px;
 
 .hero-subtitle {
 font-size: 15px;
+}
+
+.intro-title {
+font-size: 28px;
 }
 
 .section h2 {
@@ -637,5 +873,13 @@ gap: 8px;
 .pill {
 font-size: 12px;
 padding: 8px 14px;
+}
+
+.card-grid {
+grid-template-columns: 1fr;
+}
+
+.modal-content {
+padding: 20px;
 }
 }

@@ -7,22 +7,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body>
+
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-inner">
       <div class="logo">CINDY J LI</div>
 
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav-links" aria-label="Primary">
+      <nav id="navLinks" class="nav-links">
         <a href="#about">About</a>
         <a href="#marketing">Marketing</a>
         <a href="#sales">Sales</a>
@@ -34,26 +35,28 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="top">
+  <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
         <h1>CINDY J LI</h1>
         <h2>Management • Sales • Marketing</h2>
 
         <p>
-          Results-driven professional with strong client communication,
-          bilingual fluency (English/中文), and proven execution across
-          fast-paced environments.
+          Results-driven professional with strong client communication, bilingual fluency (English/中文),
+          and proven execution across fast-paced environments.
         </p>
 
         <div class="hero-buttons">
+          <!-- Put your real resume file/link later -->
           <a class="btn" href="#" target="_blank" rel="noopener">View Resume</a>
+          <!-- Put your real LinkedIn link later -->
           <a class="btn-outline" href="#" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
 
       <div class="hero-image">
-        <img src="images/profile.jpg" alt="Cindy Li headshot" />
+        <!-- IMPORTANT: your file is in /images/profile.jpg -->
+        <img src="images/profile.jpg" alt="Cindy Li headshot">
       </div>
     </div>
   </section>
@@ -66,46 +69,42 @@
       <div class="card-grid">
         <button class="card" type="button"
           data-modal="experience"
-          style="--bg:url('images/experience.jpg');">
+          style="--bg:url('images/experience.jpg')">
           <span class="card-overlay"></span>
           <span class="card-text">Experience</span>
         </button>
 
         <button class="card" type="button"
           data-modal="education"
-          style="--bg:url('images/education.jpg');">
+          style="--bg:url('images/education.jpg')">
           <span class="card-overlay"></span>
           <span class="card-text">Education</span>
         </button>
 
         <button class="card" type="button"
           data-modal="skills"
-          style="--bg:url('images/skills.jpg');">
+          style="--bg:url('images/skills.jpg')">
           <span class="card-overlay"></span>
           <span class="card-text">Skills</span>
         </button>
-      </div>
 
-      <h2 class="cards-title subtle">Get to Know Me</h2>
-
-      <div class="card-grid">
         <button class="card" type="button"
           data-modal="projects"
-          style="--bg:url('images/project.jpg');">
+          style="--bg:url('images/project.jpg')">
           <span class="card-overlay"></span>
           <span class="card-text">Projects</span>
         </button>
 
         <button class="card" type="button"
-          data-modal="volunteerModal"
-          style="--bg:url('images/volunteer.jpg');">
+          data-modal="volunteerCard"
+          style="--bg:url('images/volunteer.jpg')">
           <span class="card-overlay"></span>
           <span class="card-text">Volunteer</span>
         </button>
 
         <button class="card" type="button"
           data-modal="photography"
-          style="--bg:url('images/photography.jpg');">
+          style="--bg:url('images/photography.jpg')">
           <span class="card-overlay"></span>
           <span class="card-text">Photography</span>
         </button>
@@ -113,41 +112,39 @@
     </div>
   </section>
 
-  <!-- SECTIONS (for navbar anchors) -->
-  <section class="section" id="about">
+  <!-- SECTIONS -->
+  <section id="about" class="section">
     <div class="container">
       <h2>About</h2>
       <p>
         I’m a people-first, execution-driven professional focused on Marketing, Sales, and Management roles.
-      </p>
-      <p>
         Known for being organized, reliable, and detail-oriented, I help teams move faster with fewer misunderstandings.
       </p>
     </div>
   </section>
 
-  <section class="section dark" id="marketing">
+  <section id="marketing" class="section dark">
     <div class="container">
       <h2>Marketing</h2>
       <p>Brand awareness, client communication, structured planning, and creative storytelling.</p>
     </div>
   </section>
 
-  <section class="section" id="sales">
+  <section id="sales" class="section">
     <div class="container">
       <h2>Sales</h2>
       <p>Relationship-building, negotiation, client coordination, and closing through trust and clarity.</p>
     </div>
   </section>
 
-  <section class="section dark" id="management">
+  <section id="management" class="section dark">
     <div class="container">
       <h2>Management</h2>
-      <p>Workflow coordination, stakeholder communication, and team organization to drive outcomes.</p>
+      <p>Workflow ownership, team coordination, stakeholder alignment, and execution under deadlines.</p>
     </div>
   </section>
 
-  <section class="section" id="volunteer">
+  <section id="volunteer" class="section">
     <div class="container">
       <h2>Volunteer</h2>
       <ul class="clean-list">
@@ -158,7 +155,7 @@
     </div>
   </section>
 
-  <section class="section dark" id="contact">
+  <section id="contact" class="section dark">
     <div class="container">
       <h2>Hire Me</h2>
       <p>Open to Marketing, Sales, and Management opportunities.</p>
@@ -171,31 +168,28 @@
     </div>
   </footer>
 
-  <!-- GLASS MODAL (one modal reused for all cards) -->
-  <div class="modal" id="glassModal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
+  <!-- ONE reusable Apple-style glass modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
 
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" type="button" aria-label="Close" data-close>✕</button>
+      <div class="modal-glass" role="document">
+        <button class="modal-close" type="button" aria-label="Close" data-close="true">✕</button>
 
-      <div class="modal-glass">
         <div class="modal-header">
           <h3 id="modalTitle">Title</h3>
-          <p id="modalSubtitle" class="muted">Subtitle</p>
+          <p class="muted" id="modalSubtitle">Subtitle</p>
         </div>
 
-        <div class="modal-body" id="modalBody">
-          <!-- injected by JS -->
-        </div>
+        <div class="modal-body" id="modalBody"></div>
 
         <div class="modal-actions">
-          <a class="btn" id="modalPrimary" href="#contact">Hire Me</a>
-          <button class="btn-outline" type="button" data-close>Close</button>
+          <button class="btn-outline" type="button" data-close="true">Close</button>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=1"></script>
 </body>
 </html>
